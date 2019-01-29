@@ -5,9 +5,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <title>Document</title>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="http://www.lala.com.mx/wp-content/themes/lala/favicon/favicon.png">
+    
+    <style>
+
+        body{
+            width: auto;
+            margin: 0;
+            padding: 0;
+            font-family: 'Raleway', sans-serif;
+        }
+        .carousel-container{
+            width: 100%;
+            height: 520;
+        }
+        .headerbar{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .site-name {
+            margin-top: -15px;
+            padding-left: 90px;
+        }
+        .hamburger {
+            padding-left: 20px;
+            margin-top: 10px;
+            size: 80px;
+        }
+        .redes-sociales{
+            margin-top: 10px;
+            padding-right: 20px;
+            justify-content: space-between;
+        }
+        #sidebar1{
+            background-color: rgb(19 60 123);
+            color: white;
+            width: 200px;
+        }
+        .sidebar {
+            margin: 0;
+            padding-top: 20px;
+            background-color: rgb(19 60 123);
+            color: white;
+        }
+        .sidebar > li {
+            list-style: none;
+            background-color: rgb(19 60 123);
+            color: white;
+            margin-bottom:10px;
+        }
+        .sidebar a {
+            text-decoration: none;
+            background-color: rgb(19 60 123);
+            color: white;
+        }
+        .close-sidebar {
+            background-color: rgb(19 60 123);
+            color: white;
+            font-size: 1.5em;
+            padding-left: 5px;
+        }
+        .side-item{
+            padding-top: 20px;
+        }
+        .headerbar{
+            background-color: rgb(19 60 123);
+            padding-top: 20px;
+            color: white;
+        }
+        .facebook{
+            color:white;
+            padding-right: 10px;
+        }
+        .twitter{
+            color: white;
+            padding-right: 8px;
+        }
+        .youtube{
+            color: white;
+            padding-right: 8px;
+        }
+        .instagram{
+            color: white;
+        }
+        .footer{
+            margin: 0;
+            padding-bottom: 60px;
+            background-image: url("https://www.lala.com.mx/wp-content/uploads/2017/12/mundo-organico-bg-2-1.jpg")
+        }
+        .texto{
+            margin:0;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 500px;
+            color: white;
+        }
+    </style>
+    
+    <title>Leche Lala</title>
+
 </head>
+
 <body>
-    <h1>LALA Landin Page</h1>
+    <header class="headerbar">
+            <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
+            <div class="site-name">
+                <amp-img src= "https://www.lala.com.mx/wp-content/themes/lala/img/nuevo/logo-lala.png" width = "70" height = "70"> </amp-img>
+            </div>
+            <div class="redes-sociales">
+                <a class="facebook" href="https://www.facebook.com/UnVasoDeLala/?ref=ts&amp;fref=ts"><i class="fab fa-facebook-f"></i></a>
+                <a class="twitter" href="https://twitter.com/UnVasoDeLALA?lang=es"><i class="fab fa-twitter"></i></a>
+                <a class="youtube" href="https://www.youtube.com/user/unvasodeLALA "><i class="fab fa-youtube"></i></a>
+                <a class="instagram" href="https://www.instagram.com/lalamexico/?hl=es "><i class="fab fa-instagram"></i></a>
+            </div> 
+    </header>
+
+    <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
+            <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+            <ul class="sidebar">
+                <li><a href="http://www.lala.com.mx/nosotros/">Nosotros</a></li>
+                <li class="side-item"><a href="http://www.lala.com.mx/nuestras-marcas/">Nuestras Marcas</a></li>
+                <li class="side-item"><a href="http://www.lala.com.mx/contacto/">Contacto</a></li>
+            </ul>
+    </amp-sidebar>
+
+    <amp-img src= "https://www.lala.com.mx/wp-content/uploads/2018/01/bg-organica-2.jpg" width = "1800" height = "520" layout = "responsive" > </amp-img>
+
+    <div class="carousel-container">
+        <amp-carousel type = "slides" width="1500" height="300" id = "carousel" loop autoplay delay="1500" layout = "responsive">
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2018/06/LALA100_PAST_ROJA.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2018/06/LALA100_UHT_ROJA.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2016/12/LALA100_DORADA_330ML_1.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2017/12/Lala_Orgánica_2.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2016/12/100sinlactosa_proteina2.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2016/12/100_sinlactosa-1.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2016/12/100sinlactosa_sinrefrigerar1.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2017/09/Thumbs-cafe-lala-deslactosada.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2016/12/Thumbs-cafe-lala.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2016/12/Thumbs-chocolala.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2016/12/UHT_extracalcio_deslactosada-1.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2016/12/UHT_fibra_deslactosada.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2017/09/Thumbs-frutas-fresa.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2017/09/Thumbs-frutas-mango.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2016/12/Siluette-Deslactosada.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2017/09/PP_DESLACTOSADA_SL_F.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2016/12/entera_tetrapack1.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2016/12/bajaengrasa1.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2017/09/bajaengrasa_deslactosada1.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2017/11/evaporada1.jpg" width="450" height="300" layout = "responsive"></amp-img>
+            <amp-img src="https://www.lala.com.mx/wp-content/uploads/2016/12/semidescremada1.jpg" width="450" height="300" layout = "responsive"></amp-img>
+        </amp-carousel>
+    </div>
+    <div class="video-yt">
+        <amp-youtube data-videoid="n1I_CyRQXlI" layout="responsive" width="480" height="270" autoplay data-param-controls="0" data-param-showinfo="0" 
+        data-param-loop= "1" data-param-playlist="PMGxe7H_okM,EkMr41P1nB4" data-param-modestbranding="1" data-param-rel="0"></amp-youtube>
+    </div>
+   
+    <div class="footer">
+        <p class="texto">
+            Lala pbalbjlkajfadklsfjsda
+        </p>
+    </div>
 </body>
 </html>
